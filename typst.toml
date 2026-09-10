@@ -1,0 +1,11 @@
+[package]
+name = "lingtree"
+version = "0.1.0"
+entrypoint = "lib.typ"
+authors = ["Alexander Koller"]
+license = "MIT"
+description = "Syntax trees with a presentation-neutral tree model"
+keywords = ["syntax", "trees", "linguistics"]
+categories = ["components", "visualization", "integration"]
+disciplines = ["linguistics"]
+
