@@ -1,0 +1,4 @@
+# Generated release snapshots. They are submitted to typst/packages, not kept
+# in the source repository.
+/release/
+

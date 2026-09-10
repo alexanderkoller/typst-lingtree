@@ -40,3 +40,11 @@ converts it to content:
 ```
 
 The public API consists of `tree`, `render`, `syntree`, and `listtree`.
+
+## Releasing
+
+Run `./scripts/make-release.sh VERSION` from the repository root. The script
+updates the manifest and README import examples, compiles the tests and demo,
+assembles the package under `release/preview/lingtree/VERSION`, and verifies
+that the snapshot can be imported as an `@preview` package. Commit the source
+changes, then submit the snapshot with `../typst-publish/typst-publish.sh`.
