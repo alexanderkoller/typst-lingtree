@@ -10,3 +10,8 @@ compiler = "0.15.0"
 keywords = ["syntax", "trees", "linguistics"]
 categories = ["components", "visualization", "integration"]
 disciplines = ["linguistics"]
+
+exclude = [
+  "/examples/",
+  "/output/",
+]

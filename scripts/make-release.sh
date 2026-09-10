@@ -41,9 +41,12 @@ done
 
 echo "Assembling $PACKAGE $VERSION..."
 rm -rf "$RELEASE_DIR"
-mkdir -p "$RELEASE_DIR/src"
+mkdir -p "$RELEASE_DIR/src" "$RELEASE_DIR/docs" "$RELEASE_DIR/examples" "$RELEASE_DIR/output/pdf"
 cp typst.toml README.md LICENSE lib.typ "$RELEASE_DIR/"
 cp src/*.typ "$RELEASE_DIR/src/"
+cp docs/reference.md "$RELEASE_DIR/docs/"
+cp examples/demo.typ "$RELEASE_DIR/examples/"
+cp output/pdf/lingtree-demo.pdf "$RELEASE_DIR/output/pdf/"
 
 # Exercise package resolution against precisely the files being submitted.
 PACKAGE_PATH="$BUILD_DIR/packages"
@@ -56,4 +59,3 @@ typst compile --package-path "$PACKAGE_PATH" \
 
 echo "Release snapshot ready at release/preview/$PACKAGE/$VERSION"
 echo "Submit it with: ../typst-publish/typst-publish.sh"
-
