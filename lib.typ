@@ -97,12 +97,16 @@
 
     let body = block(width: width, height: height, above: 0pt, below: 0pt)[
       #if current.roof {
-        place(top + left, polygon(
-          stroke: options.stroke,
-          (shift + parent-x, label-size.height + 0.3em),
-          (shift + children-width, children-y - 0.3em),
-          (shift, children-y - 0.3em),
-        ))
+        // Syntree emits the same roof once per child. Preserve that behavior:
+        // overlapping strokes rasterize slightly differently from one polygon.
+        for _ in children {
+          place(top + left, polygon(
+            stroke: options.stroke,
+            (shift + parent-x, label-size.height + 0.3em),
+            (shift + children-width, children-y - 0.3em),
+            (shift, children-y - 0.3em),
+          ))
+        }
       } else {
         for child-x in child-roots {
           place(top + left, line(

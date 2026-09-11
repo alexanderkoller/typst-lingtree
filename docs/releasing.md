@@ -37,6 +37,25 @@ push the versioned source. Do not tag the source manually: the publishing tool
 offers to create and push the version tag after it pushes the submission
 branch.
 
+## Try the package locally
+
+Build and install the current manifest version into Typst's `@local` namespace:
+
+```sh
+./scripts/publish-local.sh
+```
+
+Pass a version explicitly to override the version in `typst.toml`:
+
+```sh
+./scripts/publish-local.sh 0.1.0
+```
+
+Then import the installed snapshot with
+`#import "@local/lingtree:0.1.0": syntree`. The script honors
+`TYPST_PACKAGE_PATH` when it is set; otherwise it uses Typst's standard package
+directory for the current operating system.
+
 ## Submit to Typst Universe
 
 From the repository root, run:
