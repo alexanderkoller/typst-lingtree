@@ -140,5 +140,3 @@ matching `syntree`.
   labels, roofs, programmatic construction, movement arrows, and alignment.
 - [Rendered feature tour](output/pdf/lingtree-demo.pdf) shows its output.
 
-The public API consists of `syntree`, `listtree`, `tree`, and `render`.
-Implementation helpers are not exported.
