@@ -45,6 +45,7 @@ mkdir -p "$RELEASE_DIR/src" "$RELEASE_DIR/docs" "$RELEASE_DIR/examples" "$RELEAS
 cp typst.toml README.md LICENSE lib.typ "$RELEASE_DIR/"
 cp src/*.typ "$RELEASE_DIR/src/"
 cp docs/reference.md "$RELEASE_DIR/docs/"
+cp -R docs/images "$RELEASE_DIR/docs/"
 cp examples/demo.typ "$RELEASE_DIR/examples/"
 cp output/pdf/lingtree-demo.pdf "$RELEASE_DIR/output/pdf/"
 

@@ -17,7 +17,7 @@ syntree(
   child-spacing: 1em,
   layer-spacing: 2.3em,
   stroke: 0.75pt,
-  parent-align: "subtree",
+  parent-align: "children",
   it,
 ) -> content
 ```
@@ -48,7 +48,7 @@ listtree(
   child-spacing: 1em,
   layer-spacing: 2.3em,
   stroke: 0.75pt,
-  parent-align: "subtree",
+  parent-align: "children",
   it,
 ) -> content
 ```
@@ -88,7 +88,7 @@ render(
   child-spacing: 1em,
   layer-spacing: 2.3em,
   stroke: 0.75pt,
-  parent-align: "subtree",
+  parent-align: "children",
 ) -> content
 ```
 
@@ -104,15 +104,15 @@ All three drawing functions accept these options:
 | `child-spacing` | `1em` | Horizontal gap between adjacent child subtrees. |
 | `layer-spacing` | `2.3em` | Vertical gap from a parent label to its children. |
 | `stroke` | `0.75pt` | Stroke used for branch lines and roof outlines. |
-| `parent-align` | `"subtree"` | Rule used to choose a parent's horizontal position. |
+| `parent-align` | `"children"` | Rule used to choose a parent's horizontal position. |
 
 `parent-align` accepts exactly two values:
 
-- `"subtree"` centers the parent over the combined width of its child
-  subtrees. This is the default and matches `syntree` 0.3.1.
 - `"children"` centers the parent between the root positions of its first and
-  last immediate children. Descendant widths therefore do not pull the parent
-  away from its immediate children.
+  last immediate children. This is the default; descendant widths therefore do
+  not pull the parent away from its immediate children.
+- `"subtree"` centers the parent over the combined width of its child
+  subtrees. Use this compatibility mode to match `syntree` 0.3.1.
 
 Any other value produces an assertion error identifying the two accepted
 values.
@@ -165,4 +165,3 @@ rewrite the input tree.
 
 Connectors are straight lines. The public API does not currently provide edge
 labels, curved connectors, per-edge styling, or per-node spacing overrides.
-

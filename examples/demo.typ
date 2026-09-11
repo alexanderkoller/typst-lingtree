@@ -28,9 +28,9 @@
 
 #v(8pt)
 
-This document mirrors the feature tour of `syntree` and demonstrates the
-additional `parent-align: "children"` layout mode. The default
-`parent-align: "subtree"` remains compatible with syntree.
+This document mirrors the feature tour of `syntree` and demonstrates
+`lingtree`'s default `parent-align: "children"` layout. The optional
+`parent-align: "subtree"` mode remains compatible with syntree.
 
 = Bracket notation and styling
 
@@ -147,9 +147,10 @@ can annotate relationships and movement.
 
 = Parent alignment
 
-The compatible mode centers a parent over the complete bounding box of its
-children's subtrees. The new mode centers it between the root nodes of its
-outermost immediate children, regardless of asymmetric descendant width.
+The default mode centers a parent between the root nodes of its outermost
+immediate children, regardless of asymmetric descendant width. The compatible
+mode instead centers it over the complete bounding box of its children's
+subtrees.
 
 #table(
   columns: (1fr, 1fr),
@@ -157,8 +158,8 @@ outermost immediate children, regardless of asymmetric descendant width.
   align: center,
   stroke: none,
   inset: 6pt,
-  [#text(weight: "semibold")[Over the subtree]],
-  [#text(weight: "semibold")[Over child nodes]],
+  [#text(weight: "semibold")[Over the subtree (compatible)]],
+  [#text(weight: "semibold")[Over child nodes (default)]],
   example([`parent-align: "subtree"`], syntree(
     parent-align: "subtree",
     child-spacing: 1.2em,
@@ -187,5 +188,4 @@ Custom parsers and builders can produce presentation-neutral values with
   data,
   nonterminal: (style: "italic"),
   terminal: (fill: rgb("#156f5b")),
-  parent-align: "children",
 ))

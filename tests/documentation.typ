@@ -6,7 +6,10 @@
 #syntree[
   [S [NP Alice] [VP [V saw] [NP Bob]]]
 ]
+#pagebreak()
+
 #syntree[[NP [Det the] [^Nom little bear]]]
+#pagebreak()
 
 // README list example.
 #listtree[
@@ -17,12 +20,14 @@
       - V
         - left
 ]
+#pagebreak()
 
 // README neutral-model example.
 #let subject = tree([NP], tree([Alice]))
 #let predicate = tree([VP], tree([left]))
 #let sentence = tree([S], subject, predicate)
 #render(sentence)
+#pagebreak()
 
 // README styling example.
 #syntree(
@@ -34,6 +39,19 @@
 )[
   [S [NP Alice] [VP left]]
 ]
+#pagebreak()
+
+// README immediate-child alignment example.
+#syntree(parent-align: "children")[
+  [Top [Wide [A a] [B b] [C c] [D d] [E e] [F f] [G g]] [Right r]]
+]
+#pagebreak()
+
+// README subtree alignment example.
+#syntree(parent-align: "subtree")[
+  [Top [Wide [A a] [B b] [C c] [D d] [E e] [F f] [G g]] [Right r]]
+]
+#pagebreak()
 
 // Reference examples that add behavior not exercised above.
 #listtree[

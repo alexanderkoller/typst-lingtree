@@ -27,4 +27,4 @@
 #render(tree("colors",
   tree("warm", box(fill: red, width: 1em, height: 1em), box(fill: orange, width: 1em, height: 1em)),
   tree("cool", box(fill: blue, width: 1em, height: 1em), box(fill: teal, width: 1em, height: 1em)),
-), parent-align: "children")
+))
