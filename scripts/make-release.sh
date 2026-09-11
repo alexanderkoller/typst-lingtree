@@ -41,9 +41,8 @@ done
 
 echo "Assembling $PACKAGE $VERSION..."
 rm -rf "$RELEASE_DIR"
-mkdir -p "$RELEASE_DIR/src" "$RELEASE_DIR/docs" "$RELEASE_DIR/examples" "$RELEASE_DIR/output/pdf"
+mkdir -p "$RELEASE_DIR/docs" "$RELEASE_DIR/examples" "$RELEASE_DIR/output/pdf"
 cp typst.toml README.md LICENSE lib.typ "$RELEASE_DIR/"
-cp src/*.typ "$RELEASE_DIR/src/"
 cp docs/reference.md "$RELEASE_DIR/docs/"
 cp -R docs/images "$RELEASE_DIR/docs/"
 cp examples/demo.typ "$RELEASE_DIR/examples/"
